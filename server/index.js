@@ -6,6 +6,7 @@ import helmet from 'helmet';
 
 import authRoutes from './routes/auth.js';
 import blogRoutes from './routes/blog.js';
+import uploadRoutes from './routes/uploadRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -22,6 +23,7 @@ mongoose
 
 app.use('/api/auth', authRoutes);
 app.use('/api/blogs', blogRoutes);
+app.use('/api/upload', uploadRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
